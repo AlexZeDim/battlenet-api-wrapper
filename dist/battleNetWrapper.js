@@ -74,6 +74,7 @@ class BattleNetWrapper {
             try {
                 this.axios = axios_1.default.create({
                     baseURL: this.originObject[this.origin].hostname,
+                    timeout: 10000,
                     params: this.defaultAxiosParams
                 });
                 yield this.setOAuthToken();
