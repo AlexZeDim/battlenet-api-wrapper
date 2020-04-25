@@ -1,6 +1,6 @@
 # Battle.net API Wrapper
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/QuadDamn/battlenet-api-wrapper.svg)](https://greenkeeper.io/)
+[![Greenkeeper badge](https://badges.greenkeeper.io/AlexZeDim/battlenet-api-wrapper.svg)](https://greenkeeper.io/)
 
 A promised-based Node.js wrapper for the Battle.net Community and Data APIs (supports WoW, WoW Classic, SC2, D3, and Hearthstone).
 
@@ -22,10 +22,14 @@ const battleNetWrapper = require('battlenet-api-wrapper');
   
 const clientId = 'YOUR_CLIENT_ID';  
 const clientSecret = 'YOUR_CLIENT_SECRET';  
+const providedToken = '';
+const region = 'eu';
+const locale = 'en_GB';
   
 (async function() {  
    const bnw = new battleNetWrapper();  
-   await bnw.init(clientId, clientSecret);
+   await bnw.init(clientId, clientSecret, providedToken, region, locale);
+   /* make request here with bnw.className.methodName(..args) */
 }());  
 ```
 
@@ -33,28 +37,21 @@ Once you have the `battleNetWrapper` class object instantiated, you then have ac
 that exist under that umbrella.  For each of the classes below, you will see a link to the full abstraction
 documentation.  Each of functions are available on the respective class objects.
 
-- `bnw.Diablo3Community` [Usage Documentation](https://github.com/QuadDamn/battlenet-api-wrapper/tree/master/src/d3#diablo-3-community)
-- `bnw.Diablo3GameData` [Usage Documentation](https://github.com/QuadDamn/battlenet-api-wrapper/tree/master/src/d3#diablo-3-game-data)
-- `bnw.HearthstoneGameData` [Usage Documentation](https://github.com/QuadDamn/battlenet-api-wrapper/tree/master/src/hearthstone#hearthstone-game-data)
-- `bnw.Starcraft2Community` [Usage Documentation](https://github.com/QuadDamn/battlenet-api-wrapper/tree/master/src/sc2#starcraft-2-community)
-- `bnw.Starcraft2GameData` [Usage Documentation](https://github.com/QuadDamn/battlenet-api-wrapper/tree/master/src/sc2#starcraft-2-game-data)
-- `bnw.WowCommunity` [Usage Documentation](https://github.com/QuadDamn/battlenet-api-wrapper/tree/master/src/wow#wow-community)
-- `bnw.WowGameData` [Usage Documentation](https://github.com/QuadDamn/battlenet-api-wrapper/tree/master/src/wow#wow-game-data)
-- `bnw.WowProfileData` [Usage Documentation](https://github.com/QuadDamn/battlenet-api-wrapper/tree/master/src/wow#wow-profile-data)
-- `bnw.WowClassicGameData` [Usage Documentation](https://github.com/QuadDamn/battlenet-api-wrapper/tree/master/src/wowClassic#wow-classic-game-data)
+- `bnw.Diablo3Community` [Usage Documentation](https://github.com/AlexZeDim/battlenet-api-wrapper/tree/master/src/d3#diablo-3-community)
+- `bnw.Diablo3GameData` [Usage Documentation](https://github.com/AlexZeDim/battlenet-api-wrapper/tree/master/src/d3#diablo-3-game-data)
+- `bnw.HearthstoneGameData` [Usage Documentation](https://github.com/AlexZeDim/battlenet-api-wrapper/tree/master/src/hearthstone#hearthstone-game-data)
+- `bnw.Starcraft2Community` [Usage Documentation](https://github.com/AlexZeDim/battlenet-api-wrapper/tree/master/src/sc2#starcraft-2-community)
+- `bnw.Starcraft2GameData` [Usage Documentation](https://github.com/AlexZeDim/battlenet-api-wrapper/tree/master/src/sc2#starcraft-2-game-data)
+- `bnw.WowCommunity` [Usage Documentation](https://github.com/AlexZeDim/battlenet-api-wrapper/tree/master/src/wow#wow-community)
+- `bnw.WowGameData` [Usage Documentation](https://github.com/AlexZeDim/battlenet-api-wrapper/tree/master/src/wow#wow-game-data)
+- `bnw.WowProfileData` [Usage Documentation](https://github.com/AlexZeDim/battlenet-api-wrapper/tree/master/src/wow#wow-profile-data)
+- `bnw.WowClassicGameData` [Usage Documentation](https://github.com/AlexZeDim/battlenet-api-wrapper/tree/master/src/wowClassic#wow-classic-game-data)
 
-## Having issues or have questions?
+## Having issues, wanna contribute or another crazy idea?
 
-[Post an issue](https://github.com/QuadDamn/battlenet-api-wrapper/issues) and it will be responded to ASAP!
-
-## Want to contribute?
-
-Feel free!  [Create a Pull Request](https://github.com/QuadDamn/battlenet-api-wrapper/pulls) and I'll review it ASAP!
-
-## Todos
-
-- Add in test coverage.
+[Create a PR](https://github.com/AlexZeDim/battlenet-api-wrapper/pulls) or [post an issue](https://github.com/AlexZeDim/battlenet-api-wrapper/issues) in this fork (reviewed by me)
+Or [make PR](https://github.com/QuadDamn/battlenet-api-wrapper/pulls) or [post an issue](https://github.com/QuadDamn/battlenet-api-wrapper/issues) and the origin source (reviewed by QuadDamn)
 
 ## License
 
-Battle.net API Wrapper is released under the  [MIT License](https://opensource.org/licenses/MIT).
+Battle.net API Wrapper is released under the [MIT License](https://opensource.org/licenses/MIT).
