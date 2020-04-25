@@ -42,16 +42,21 @@ documentation.  Each of functions are available on the respective class objects.
 - `bnw.HearthstoneGameData` [Usage Documentation](https://github.com/AlexZeDim/battlenet-api-wrapper/tree/master/src/hearthstone#hearthstone-game-data)
 - `bnw.Starcraft2Community` [Usage Documentation](https://github.com/AlexZeDim/battlenet-api-wrapper/tree/master/src/sc2#starcraft-2-community)
 - `bnw.Starcraft2GameData` [Usage Documentation](https://github.com/AlexZeDim/battlenet-api-wrapper/tree/master/src/sc2#starcraft-2-game-data)
-- `bnw.WowCommunity` [Usage Documentation](https://github.com/AlexZeDim/battlenet-api-wrapper/tree/master/src/wow#wow-community)
 - `bnw.WowGameData` [Usage Documentation](https://github.com/AlexZeDim/battlenet-api-wrapper/tree/master/src/wow#wow-game-data)
 - `bnw.WowProfileData` [Usage Documentation](https://github.com/AlexZeDim/battlenet-api-wrapper/tree/master/src/wow#wow-profile-data)
 - `bnw.WowClassicGameData` [Usage Documentation](https://github.com/AlexZeDim/battlenet-api-wrapper/tree/master/src/wowClassic#wow-classic-game-data)
+- `bnw.WowCommunity` [Usage Documentation](https://github.com/AlexZeDim/battlenet-api-wrapper/tree/master/src/wow#wow-community)
+
+WoWCommunity endpoints has been deprecated since 16 March 2020 and no longer working. ([See this thread](https://us.forums.blizzard.com/en/blizzard/t/wow-community-api-turned-off/4281))
 
 ## Having issues, wanna contribute or another crazy idea?
 
 [Create a PR](https://github.com/AlexZeDim/battlenet-api-wrapper/pulls) or [post an issue](https://github.com/AlexZeDim/battlenet-api-wrapper/issues) in this fork (reviewed by me)
-Or [make PR](https://github.com/QuadDamn/battlenet-api-wrapper/pulls) or [post an issue](https://github.com/QuadDamn/battlenet-api-wrapper/issues) and the origin source (reviewed by QuadDamn)
+
+Or [make PR](https://github.com/QuadDamn/battlenet-api-wrapper/pulls), [post an issue](https://github.com/QuadDamn/battlenet-api-wrapper/issues) at the origin source (reviewed by QuadDamn)
 
 ## License
+
+The original library has been made by **[QuadDamn](https://github.com/QuadDamn)**
 
 Battle.net API Wrapper is released under the [MIT License](https://opensource.org/licenses/MIT).

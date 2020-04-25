@@ -1,4 +1,4 @@
-## WoW Community
+## WoW Game Data
   
 In order to use these functions, you will need to have initialized the BattleNetWrapper class and then you can use these functions.  
   
@@ -15,334 +15,6 @@ const locale = 'en_GB';
 (async function() {  
    const bnw = new battleNetWrapper();  
    await bnw.init(clientId, clientSecret, providedToken, region, locale);
-   const data = await bnw.WowCommunity.getBossMasterList();  
-}());  
-```  
-  
-**Available Functions**  
-
--   [getAchievement][74]  
--   [getBossMasterList][76]  
--   [getBoss][77]  
--   [getChallengeModeRealmLeaderboard][79]  
--   [getChallengeModeRegionLeaderboard][81]  
--   [getCharacterProfile][82]  
--   [getGuildProfile][84]    
--   [getItem][86]  
--   [getItemSet][88]  
--   [getMountMasterList][90]  
--   [getPetMasterList][91]  
--   [getPetAbilities][92]  
--   [getPetSpecies][94]    
--   [getPetStats][96]    
--   [getPvpLeaderboards][98]  
--   [getQuest][100]  
--   [getRealmStatusList][102]  
--   [getRecipe][103]  
--   [getSpell][105]  
--   [getZoneMasterList][107]  
--   [getZone][108]  
--   [getBattlegroups][110]  
--   [getCharacterRaces][111]  
--   [getCharacterClasses][112]  
--   [getCharacterAchievements][113]  
--   [getGuildRewards][114]  
--   [getGuildPerks][115]  
--   [getGuildAchievements][116]  
--   [getItemClasses][117]  
--   [getTalents][118]  
--   [getPetTypes][119]
-
-### getAchievement  
-  
-Returns data about an individual achievement.  
-  
-#### Parameters  
-  
--   `achievementId` **[number][312]** The ID of the achievement to retrieve.  
-  
-Returns **[Promise][310]&lt;[object][311]>**   
-  
-### getBossMasterList  
-  
-Returns a list of all supported bosses. A "boss" in this context should be considered a boss encounter,  
-which may include more than one NPC.  
-  
-Returns **[Promise][310]&lt;[object][311]>**   
-  
-### getBoss  
-  
-Returns information about the specified boss. A "boss" in this context should be considered a boss encounter,  
-which may include more than one NPC.  
-  
-#### Parameters  
-  
--   `bossId` **[number][312]** The ID of the boss to retrieve.  
-  
-Returns **[Promise][310]&lt;[object][311]>**   
-  
-### getChallengeModeRealmLeaderboard  
-  
-The request returns data for all nine challenge mode maps (currently). The map field includes the current medal  
-times for each dungeon. Each ladder provides data about each character that was part of each run. The  
-character data includes the current cached specialization of the character while the member field includes the  
-specialization of the character during the challenge mode run.  
-  
-#### Parameters  
-  
--   `realmSlug` **[string][313]** The realm to request.  
-  
-Returns **[Promise][310]&lt;[object][311]>**   
-  
-### getChallengeModeRegionLeaderboard  
-  
-The region leaderboard has the exact same data format as the realm leaderboards except there is no `realm` field.  
-Instead, the response has the top 100 results gathered for each map for all of the available realm leaderboards  
-in a region.  
-  
-Returns **[Promise][310]&lt;[object][311]>**   
-  
-### getCharacterProfile  
-  
-Returns a character profile.  In order to get additional fields, you have to specify them in the fields parameter  
-as comma-delimited list.  
-  
-Your options for the fields are:  
-  
-achievements, appearance, feed, guild, hunterPets, items, mounts, pets, petSlots, professions, progression,  
-pvp, quests, reputation, statistics, stats, talents, titles, audit.  
-  
-#### Parameters  
-  
--   `realm` **[string][313]** The character's realm. Can be provided as the proper realm name or the normalized realm name.  
--   `characterName` **[string][313]** The name of the character to retrieve.  
--   `fields` **[string][313]** Specifies the data to retrieve.  
-  
-Returns **[Promise][310]&lt;[object][311]>**   
-  
-### getGuildProfile  
-  
-Returns a guild profile.  In order to get additional fields, you have to specify them in the fields parameter  
-as comma-delimited list.  
-  
-Your options for the fields are:  
-  
-achievements, challenges, members, news  
-  
-#### Parameters  
-  
--   `realm` **[string][313]** The guild's realm.  
--   `guildName` **[string][313]** The name of the guild to query.  
--   `fields` **[string][313]** The optional data to retrieve about the guild.  
-  
-Returns **[Promise][310]&lt;[object][311]>**   
-  
-### getItem  
-  
-Returns detailed information about the item.  
-  
-#### Parameters  
-  
--   `itemId` **[number][312]** The requested item's unique ID.  
-  
-Returns **[Promise][310]&lt;[object][311]>**   
-  
-### getItemSet  
-  
-Returns detailed information about the item set.  
-  
-#### Parameters  
-  
--   `setId` **[string][313]** The requested set's unique ID.  
-  
-Returns **[Promise][310]&lt;[object][311]>**   
-  
-### getMountMasterList  
-  
-Returns a list of all supported mounts.  
-  
-Returns **[Promise][310]&lt;[object][311]>**   
-  
-### getPetMasterList  
-  
-Returns a list of all supported battle and vanity pets.  
-  
-Returns **[Promise][310]&lt;[object][311]>**   
-  
-### getPetAbilities  
-  
-Returns data about a individual battle pet ability ID. This resource does not provide ability tooltips.  
-  
-#### Parameters  
-  
--   `abilityId` **[string][313]** The ID of the ability to retrieve.  
-  
-Returns **[Promise][310]&lt;[object][311]>**   
-  
-### getPetSpecies  
-  
-Returns data about an individual pet species. Use pets as the `field` value in a  
-character profile request to get species IDs. Each species also has data about its six abilities.  
-  
-#### Parameters  
-  
--   `speciesId` **[string][313]**   
-  
-Returns **[Promise][310]&lt;[object][311]>**   
-  
-### getPetStats  
-  
-Returns detailed information about a given species of pet.  
-  
-#### Parameters  
-  
--   `speciesId` **[string][313]** The pet's species ID. This can be found by querying a user's list of pets via the Character Profile API.  
--   `level` **[number][312]** The pet's level. Pet levels max out at 25. If omitted, the API assumes a default value of 1. (optional, default `1`)  
--   `breedId` **[number][312]** The pet's breed. Retrievable via the Character Profile API. If omitted the API assumes a default value of 3. (optional, default `3`)  
--   `qualityId` **[number][312]** The pet's quality. Retrievable via the Character Profile API. Pet quality can range from 0 to 5  
-    (0 is poor quality and 5 is legendary). If omitted, the API will assume a default value of 1. (optional, default `1`)  
-  
-Returns **[Promise][310]&lt;[object][311]>**   
-  
-### getPvpLeaderboards  
-  
-Returns leaderboard information for the 2v2, 3v3, 5v5, and Rated Battleground leaderboards.  
-  
-#### Parameters  
-  
--   `bracket` **[string][313]** The type of leaderboard to retrieve. Valid entries are `2v2`, `3v3`, `5v5`, and `rbg`.  
-  
-Returns **[Promise][310]&lt;[object][311]>**   
-  
-### getQuest  
-  
-Returns metadata for a specified quest.  
-  
-#### Parameters  
-  
--   `questId` **[string][313]** The ID of the quest to retrieve.  
-  
-Returns **[Promise][310]&lt;[object][311]>**   
-  
-### getRealmStatusList  
-  
-Retrieves realm status information. This information is limited to whether or not the realm is up, the type  
-and state of the realm, and the current population.  
-  
-Returns **[Promise][310]&lt;[object][311]>**   
-  
-### getRecipe  
-  
-Returns basic recipe information.  
-  
-#### Parameters  
-  
--   `recipeId` **[string][313]** Unique ID for the desired recipe.  
-  
-Returns **[Promise][310]&lt;[object][311]>**   
-  
-### getSpell  
-  
-Returns information about spells.  
-  
-#### Parameters  
-  
--   `spellId` **[string][313]** The ID of the spell to retrieve.  
-  
-Returns **[Promise][310]&lt;[object][311]>**   
-  
-### getZoneMasterList  
-  
-Returns a list of all supported zones and their bosses. A "zone" in this context should be considered a  
-dungeon or a raid, not a world zone. A "boss" in this context should be considered a boss encounter,  
-which may include more than one NPC.  
-  
-Returns **[Promise][310]&lt;[object][311]>**   
-  
-### getZone  
-  
-Returns information about zones.  
-  
-#### Parameters  
-  
--   `zoneId` **[string][313]** The ID of the zone to retrieve.  
-  
-Returns **[Promise][310]&lt;[object][311]>**   
-  
-### getBattlegroups  
-  
-Returns a list of battlegroups for the specified region.  
-  
-Returns **[Promise][310]&lt;[object][311]>**   
-  
-### getCharacterRaces  
-  
-Returns a list of races and their associated faction, name, unique ID, and skin.  
-  
-Returns **[Promise][310]&lt;[object][311]>**   
-  
-### getCharacterClasses  
-  
-Returns a list of character classes.  
-  
-Returns **[Promise][310]&lt;[object][311]>**   
-  
-### getCharacterAchievements  
-  
-Returns a list of all achievements that characters can earn as well as the category structure and hierarchy.  
-  
-Returns **[Promise][310]&lt;[object][311]>**   
-  
-### getGuildRewards  
-  
-The guild rewards data API provides a list of all guild rewards.  
-  
-Returns **[Promise][310]&lt;[object][311]>**   
-  
-### getGuildPerks  
-  
-Returns a list of all guild perks.  
-  
-Returns **[Promise][310]&lt;[object][311]>**   
-  
-### getGuildAchievements  
-  
-Returns a list of all guild achievements as well as the category structure and hierarchy.  
-  
-Returns **[Promise][310]&lt;[object][311]>**   
-  
-### getItemClasses  
-  
-Returns a list of item classes.  
-  
-Returns **[Promise][310]&lt;[object][311]>**   
-  
-### getTalents  
-  
-Returns a list of talents, specs, and glyphs for each class.  
-  
-Returns **[Promise][310]&lt;[object][311]>**   
-  
-### getPetTypes  
-  
-Returns a list of the different battle pet types, including what they are strong and weak against.  
-  
-Returns **[Promise][310]&lt;[object][311]>**
-
-## WoW Game Data
-  
-In order to use these functions, you will need to have initialized the BattleNetWrapper class and then you can use these functions.  
-  
-***Example implementation:***  
-```  
-const battleNetWrapper = require('battlenet-api-wrapper');  
-  
-const clientId = 'YOUR_CLIENT_ID';  
-const clientSecret = 'YOUR_CLIENT_SECRET';  
-  
-(async function() {  
-   const bnw = new battleNetWrapper();  
-   await bnw.init(clientId, clientSecret);  
    const data = await bnw.WowGameData.getBossMasterList();  
 }());  
 ```  
@@ -1360,6 +1032,338 @@ Returns a single guild's roster by its name and realm.
   
 Returns **[Promise][310]&lt;[object][311]>**
 
+## WoW Community (**WARNING**: DEPREACTED)
+  
+In order to use these functions, you will need to have initialized the BattleNetWrapper class and then you can use these functions.  
+  
+***Example implementation:***  
+```  
+const battleNetWrapper = require('battlenet-api-wrapper');  
+  
+const clientId = 'YOUR_CLIENT_ID';  
+const clientSecret = 'YOUR_CLIENT_SECRET';  
+const providedToken = '';
+const region = 'eu';
+const locale = 'en_GB';
+  
+(async function() {  
+   const bnw = new battleNetWrapper();  
+   await bnw.init(clientId, clientSecret, providedToken, region, locale);
+   const data = await bnw.WowCommunity.getBossMasterList();  
+}());  
+```  
+  
+**Available Functions**  
+
+-   [getAchievement][74]  
+-   [getBossMasterList][76]  
+-   [getBoss][77]  
+-   [getChallengeModeRealmLeaderboard][79]  
+-   [getChallengeModeRegionLeaderboard][81]  
+-   [getCharacterProfile][82]  
+-   [getGuildProfile][84]    
+-   [getItem][86]  
+-   [getItemSet][88]  
+-   [getMountMasterList][90]  
+-   [getPetMasterList][91]  
+-   [getPetAbilities][92]  
+-   [getPetSpecies][94]    
+-   [getPetStats][96]    
+-   [getPvpLeaderboards][98]  
+-   [getQuest][100]  
+-   [getRealmStatusList][102]  
+-   [getRecipe][103]  
+-   [getSpell][105]  
+-   [getZoneMasterList][107]  
+-   [getZone][108]  
+-   [getBattlegroups][110]  
+-   [getCharacterRaces][111]  
+-   [getCharacterClasses][112]  
+-   [getCharacterAchievements][113]  
+-   [getGuildRewards][114]  
+-   [getGuildPerks][115]  
+-   [getGuildAchievements][116]  
+-   [getItemClasses][117]  
+-   [getTalents][118]  
+-   [getPetTypes][119]
+
+### getAchievement  
+  
+Returns data about an individual achievement.  
+  
+#### Parameters  
+  
+-   `achievementId` **[number][312]** The ID of the achievement to retrieve.  
+  
+Returns **[Promise][310]&lt;[object][311]>**   
+  
+### getBossMasterList  
+  
+Returns a list of all supported bosses. A "boss" in this context should be considered a boss encounter,  
+which may include more than one NPC.  
+  
+Returns **[Promise][310]&lt;[object][311]>**   
+  
+### getBoss  
+  
+Returns information about the specified boss. A "boss" in this context should be considered a boss encounter,  
+which may include more than one NPC.  
+  
+#### Parameters  
+  
+-   `bossId` **[number][312]** The ID of the boss to retrieve.  
+  
+Returns **[Promise][310]&lt;[object][311]>**   
+  
+### getChallengeModeRealmLeaderboard  
+  
+The request returns data for all nine challenge mode maps (currently). The map field includes the current medal  
+times for each dungeon. Each ladder provides data about each character that was part of each run. The  
+character data includes the current cached specialization of the character while the member field includes the  
+specialization of the character during the challenge mode run.  
+  
+#### Parameters  
+  
+-   `realmSlug` **[string][313]** The realm to request.  
+  
+Returns **[Promise][310]&lt;[object][311]>**   
+  
+### getChallengeModeRegionLeaderboard  
+  
+The region leaderboard has the exact same data format as the realm leaderboards except there is no `realm` field.  
+Instead, the response has the top 100 results gathered for each map for all of the available realm leaderboards  
+in a region.  
+  
+Returns **[Promise][310]&lt;[object][311]>**   
+  
+### getCharacterProfile  
+  
+Returns a character profile.  In order to get additional fields, you have to specify them in the fields parameter  
+as comma-delimited list.  
+  
+Your options for the fields are:  
+  
+achievements, appearance, feed, guild, hunterPets, items, mounts, pets, petSlots, professions, progression,  
+pvp, quests, reputation, statistics, stats, talents, titles, audit.  
+  
+#### Parameters  
+  
+-   `realm` **[string][313]** The character's realm. Can be provided as the proper realm name or the normalized realm name.  
+-   `characterName` **[string][313]** The name of the character to retrieve.  
+-   `fields` **[string][313]** Specifies the data to retrieve.  
+  
+Returns **[Promise][310]&lt;[object][311]>**   
+  
+### getGuildProfile  
+  
+Returns a guild profile.  In order to get additional fields, you have to specify them in the fields parameter  
+as comma-delimited list.  
+  
+Your options for the fields are:  
+  
+achievements, challenges, members, news  
+  
+#### Parameters  
+  
+-   `realm` **[string][313]** The guild's realm.  
+-   `guildName` **[string][313]** The name of the guild to query.  
+-   `fields` **[string][313]** The optional data to retrieve about the guild.  
+  
+Returns **[Promise][310]&lt;[object][311]>**   
+  
+### getItem  
+  
+Returns detailed information about the item.  
+  
+#### Parameters  
+  
+-   `itemId` **[number][312]** The requested item's unique ID.  
+  
+Returns **[Promise][310]&lt;[object][311]>**   
+  
+### getItemSet  
+  
+Returns detailed information about the item set.  
+  
+#### Parameters  
+  
+-   `setId` **[string][313]** The requested set's unique ID.  
+  
+Returns **[Promise][310]&lt;[object][311]>**   
+  
+### getMountMasterList  
+  
+Returns a list of all supported mounts.  
+  
+Returns **[Promise][310]&lt;[object][311]>**   
+  
+### getPetMasterList  
+  
+Returns a list of all supported battle and vanity pets.  
+  
+Returns **[Promise][310]&lt;[object][311]>**   
+  
+### getPetAbilities  
+  
+Returns data about a individual battle pet ability ID. This resource does not provide ability tooltips.  
+  
+#### Parameters  
+  
+-   `abilityId` **[string][313]** The ID of the ability to retrieve.  
+  
+Returns **[Promise][310]&lt;[object][311]>**   
+  
+### getPetSpecies  
+  
+Returns data about an individual pet species. Use pets as the `field` value in a  
+character profile request to get species IDs. Each species also has data about its six abilities.  
+  
+#### Parameters  
+  
+-   `speciesId` **[string][313]**   
+  
+Returns **[Promise][310]&lt;[object][311]>**   
+  
+### getPetStats  
+  
+Returns detailed information about a given species of pet.  
+  
+#### Parameters  
+  
+-   `speciesId` **[string][313]** The pet's species ID. This can be found by querying a user's list of pets via the Character Profile API.  
+-   `level` **[number][312]** The pet's level. Pet levels max out at 25. If omitted, the API assumes a default value of 1. (optional, default `1`)  
+-   `breedId` **[number][312]** The pet's breed. Retrievable via the Character Profile API. If omitted the API assumes a default value of 3. (optional, default `3`)  
+-   `qualityId` **[number][312]** The pet's quality. Retrievable via the Character Profile API. Pet quality can range from 0 to 5  
+    (0 is poor quality and 5 is legendary). If omitted, the API will assume a default value of 1. (optional, default `1`)  
+  
+Returns **[Promise][310]&lt;[object][311]>**   
+  
+### getPvpLeaderboards  
+  
+Returns leaderboard information for the 2v2, 3v3, 5v5, and Rated Battleground leaderboards.  
+  
+#### Parameters  
+  
+-   `bracket` **[string][313]** The type of leaderboard to retrieve. Valid entries are `2v2`, `3v3`, `5v5`, and `rbg`.  
+  
+Returns **[Promise][310]&lt;[object][311]>**   
+  
+### getQuest  
+  
+Returns metadata for a specified quest.  
+  
+#### Parameters  
+  
+-   `questId` **[string][313]** The ID of the quest to retrieve.  
+  
+Returns **[Promise][310]&lt;[object][311]>**   
+  
+### getRealmStatusList  
+  
+Retrieves realm status information. This information is limited to whether or not the realm is up, the type  
+and state of the realm, and the current population.  
+  
+Returns **[Promise][310]&lt;[object][311]>**   
+  
+### getRecipe  
+  
+Returns basic recipe information.  
+  
+#### Parameters  
+  
+-   `recipeId` **[string][313]** Unique ID for the desired recipe.  
+  
+Returns **[Promise][310]&lt;[object][311]>**   
+  
+### getSpell  
+  
+Returns information about spells.  
+  
+#### Parameters  
+  
+-   `spellId` **[string][313]** The ID of the spell to retrieve.  
+  
+Returns **[Promise][310]&lt;[object][311]>**   
+  
+### getZoneMasterList  
+  
+Returns a list of all supported zones and their bosses. A "zone" in this context should be considered a  
+dungeon or a raid, not a world zone. A "boss" in this context should be considered a boss encounter,  
+which may include more than one NPC.  
+  
+Returns **[Promise][310]&lt;[object][311]>**   
+  
+### getZone  
+  
+Returns information about zones.  
+  
+#### Parameters  
+  
+-   `zoneId` **[string][313]** The ID of the zone to retrieve.  
+  
+Returns **[Promise][310]&lt;[object][311]>**   
+  
+### getBattlegroups  
+  
+Returns a list of battlegroups for the specified region.  
+  
+Returns **[Promise][310]&lt;[object][311]>**   
+  
+### getCharacterRaces  
+  
+Returns a list of races and their associated faction, name, unique ID, and skin.  
+  
+Returns **[Promise][310]&lt;[object][311]>**   
+  
+### getCharacterClasses  
+  
+Returns a list of character classes.  
+  
+Returns **[Promise][310]&lt;[object][311]>**   
+  
+### getCharacterAchievements  
+  
+Returns a list of all achievements that characters can earn as well as the category structure and hierarchy.  
+  
+Returns **[Promise][310]&lt;[object][311]>**   
+  
+### getGuildRewards  
+  
+The guild rewards data API provides a list of all guild rewards.  
+  
+Returns **[Promise][310]&lt;[object][311]>**   
+  
+### getGuildPerks  
+  
+Returns a list of all guild perks.  
+  
+Returns **[Promise][310]&lt;[object][311]>**   
+  
+### getGuildAchievements  
+  
+Returns a list of all guild achievements as well as the category structure and hierarchy.  
+  
+Returns **[Promise][310]&lt;[object][311]>**   
+  
+### getItemClasses  
+  
+Returns a list of item classes.  
+  
+Returns **[Promise][310]&lt;[object][311]>**   
+  
+### getTalents  
+  
+Returns a list of talents, specs, and glyphs for each class.  
+  
+Returns **[Promise][310]&lt;[object][311]>**   
+  
+### getPetTypes  
+  
+Returns a list of the different battle pet types, including what they are strong and weak against.  
+  
+Returns **[Promise][310]&lt;[object][311]>**
+
+
 [74]: #getachievement  
   
 [75]: #parameters-34  
@@ -1765,6 +1769,34 @@ Returns **[Promise][310]&lt;[object][311]>**
 [312]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number  
   
 [313]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String
+
+[315]: #getprofessionindex
+
+[316]: #getauctionhouse
+
+[317]: #getprofession
+
+[318]: #getprofessionmedia
+
+[319]: #getprofessionskilltier
+
+[320]: #getrecipe
+
+[321]: #getrecipemedia
+
+[315]: #getprofessionindex
+
+[316]: #getauctionhouse
+
+[317]: #getprofession
+
+[318]: #getprofessionmedia
+
+[319]: #getprofessionskilltier
+
+[320]: #getrecipe
+
+[321]: #getrecipemedia
 
 [315]: #getprofessionindex
 
