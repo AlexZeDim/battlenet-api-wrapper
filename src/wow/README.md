@@ -1779,3 +1779,31 @@ Returns **[Promise][310]&lt;[object][311]>**
 [320]: #getrecipe
 
 [321]: #getrecipemedia
+
+[315]: #getprofessionindex
+
+[316]: #getauctionhouse
+
+[317]: #getprofession
+
+[318]: #getprofessionmedia
+
+[319]: #getprofessionskilltier
+
+[320]: #getrecipe
+
+[321]: #getrecipemedia
+
+[315]: #getprofessionindex
+
+[316]: #getauctionhouse
+
+[317]: #getprofession
+
+[318]: #getprofessionmedia
+
+[319]: #getprofessionskilltier
+
+[320]: #getrecipe
+
+[321]: #getrecipemedia
