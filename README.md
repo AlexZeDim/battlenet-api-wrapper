@@ -4,7 +4,7 @@ A promised-based Node.js wrapper for the Battle.net Community and Data APIs (sup
 
 ## Installation
 
-`$ npm install --save battlenet-api-wrapper`
+`$ npm install --save "git+https://github.com/AlexZeDim/battlenet-api-wrapper.git"`
 
 ## Prerequisites / General Information
 
