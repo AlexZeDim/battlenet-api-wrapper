@@ -14,9 +14,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/QuadDamn/battlenet-api-wrapper.git"
+    "url": "https://github.com/AlexZeDim/battlenet-api-wrapper.git"
   },
-  "author": "Shane Jeffery",
+  "author": "Shane Jeffery, AlexZeDim",
   "license": "MIT",
   "devDependencies": {
     "@types/node": "^13.1.1",
