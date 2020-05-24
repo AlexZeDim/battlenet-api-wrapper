@@ -226,6 +226,18 @@ class WowProfileData {
         });
     }
     /**
+     * Returns a profile summary for a character.
+     *
+     * @param realmSlug The slug of the realm.
+     * @param characterName The lowercase name of the character.
+     *
+     */
+    getCharacterStatus(realmSlug, characterName) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return yield this._handleApiCall(`${this.gameBaseUrlPath}/${realmSlug}/${characterName}/status`, 'Error fetching character summary.');
+        });
+    }
+    /**
      * Returns the PvP bracket statistics for a character.
      *
      * @param realmSlug The slug of the realm.

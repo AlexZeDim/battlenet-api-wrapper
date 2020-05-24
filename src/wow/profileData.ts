@@ -260,6 +260,20 @@ class WowProfileData {
     }
 
     /**
+     * Returns a profile status for a character.
+     *
+     * @param realmSlug The slug of the realm.
+     * @param characterName The lowercase name of the character.
+     *
+     */
+    async getCharacterStatus(realmSlug: string, characterName: string): Promise<object> {
+        return await this._handleApiCall(
+            `${this.gameBaseUrlPath}/${realmSlug}/${characterName}/status`,
+            'Error fetching character summary.'
+        );
+    }
+
+    /**
      * Returns the PvP bracket statistics for a character.
      *
      * @param realmSlug The slug of the realm.
