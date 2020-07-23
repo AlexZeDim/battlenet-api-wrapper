@@ -1086,7 +1086,7 @@ class WowGameData {
                 return response.data;
             }
         } catch (error) {
-            if (error.response.status) {
+            if (error.response && error.response.status) {
                 if (~[304, 404, 403, 500].indexOf(error.response.status)) {
                     throw new Error(error.response.status);
                 }
