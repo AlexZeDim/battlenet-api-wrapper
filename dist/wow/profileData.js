@@ -226,7 +226,7 @@ class WowProfileData {
         });
     }
     /**
-     * Returns a profile summary for a character.
+     * Returns a profile status for a character.
      *
      * @param realmSlug The slug of the realm.
      * @param characterName The lowercase name of the character.
