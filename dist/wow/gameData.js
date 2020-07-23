@@ -832,9 +832,9 @@ class WowGameData {
                     if (~[304, 404, 403, 500].indexOf(error.response.status)) {
                         throw new Error(error.response.status);
                     }
-                }
-                else {
-                    console.error(error.response.statusText);
+                    else {
+                        console.error(error.response);
+                    }
                 }
                 throw new Error(`${errorMessage}`);
             }
