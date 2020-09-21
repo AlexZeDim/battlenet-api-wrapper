@@ -107,7 +107,10 @@ class BattleNetWrapper {
     getToken(clientId, clientSecret, origin) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
-                const response = yield axios_1.default.get(`https://${(origin) ? origin : this.origin}.battle.net/oauth/token`, {
+                const response = yield axios_1.default.post(`https://${(origin) ? origin : this.origin}.battle.net/oauth/token`, {
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                    },
                     auth: {
                         username: (clientId) ? clientId : this.clientId,
                         password: (clientSecret) ? clientSecret : this.clientSecret,

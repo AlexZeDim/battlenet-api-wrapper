@@ -115,7 +115,10 @@ class BattleNetWrapper {
     // so you should never have to worry about the token ever expiring.
     async getToken(clientId?: string, clientSecret?: string, origin?: string) {
         try {
-            const response = await axios.get(`https://${(origin) ? origin : this.origin}.battle.net/oauth/token`, {
+            const response = await axios.post(`https://${(origin) ? origin : this.origin}.battle.net/oauth/token`, {
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
                 auth: {
                     username: (clientId) ? clientId : this.clientId,
                     password: (clientSecret) ? clientSecret : this.clientSecret,
