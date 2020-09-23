@@ -115,7 +115,9 @@ class BattleNetWrapper {
     // so you should never have to worry about the token ever expiring.
     async getToken(clientId?: string, clientSecret?: string, origin?: string) {
         try {
-            const response = await axios.post(`https://${(origin) ? origin : this.origin}.battle.net/oauth/token`, {
+            const response = await axios({
+                url: `https://${(origin) ? origin : this.origin}.battle.net/oauth/token`,
+                method: 'post',
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded'
                 },
@@ -130,7 +132,6 @@ class BattleNetWrapper {
 
             this.oauthToken = response.data.access_token;
         } catch (error) {
-            console.log(error);
             throw new Error(`Problem getting the OAuth token from the Blizzard API.  
                             Please check that your Client ID and Secret are correct.`);
         }
