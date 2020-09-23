@@ -384,7 +384,7 @@ class WowProfileData {
                 return response.data;
             }
             catch (error) {
-                console.log(error);
+                console.error(error);
                 throw new Error(`WoW Profile Error :: ${errorMessage}`);
             }
         });

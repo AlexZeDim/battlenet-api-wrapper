@@ -107,7 +107,9 @@ class BattleNetWrapper {
     getToken(clientId, clientSecret, origin) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
-                const response = yield axios_1.default.post(`https://${(origin) ? origin : this.origin}.battle.net/oauth/token`, {
+                const response = yield axios_1.default({
+                    url: `https://${(origin) ? origin : this.origin}.battle.net/oauth/token`,
+                    method: 'post',
                     headers: {
                         'Content-Type': 'application/x-www-form-urlencoded'
                     },
@@ -122,7 +124,6 @@ class BattleNetWrapper {
                 this.oauthToken = response.data.access_token;
             }
             catch (error) {
-                console.log(error);
                 throw new Error(`Problem getting the OAuth token from the Blizzard API.  
                             Please check that your Client ID and Secret are correct.`);
             }
