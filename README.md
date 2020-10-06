@@ -1,4 +1,4 @@
-# Warning! This fork is already deprecated. If you want to use alternative library to access Blizzard Battle.net API, try Lukem's [BlizzAPI](https://github.com/lukemnet/blizzapi)
+# Warning! This fork is already deprecated. If you are looking for a library to access Blizzard Battle.net API, try Lukem's [BlizzAPI](https://github.com/lukemnet/blizzapi)
 
 ## Battle.net API Wrapper
 
