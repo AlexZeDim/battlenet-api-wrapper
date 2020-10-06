@@ -1,4 +1,6 @@
-# Battle.net API Wrapper
+# Warning! This fork is already deprecated. If you want to use alternative library to access Blizzard Battle.net API, try Lukem's [BlizzAPI](https://github.com/lukemnet/blizzapi)
+
+## Battle.net API Wrapper
 
 A promised-based Node.js wrapper for the Battle.net Community and Data APIs (supports WoW, WoW Classic, SC2, D3, and Hearthstone).
 
